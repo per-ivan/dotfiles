@@ -204,6 +204,8 @@ bar {
     }
 }
 
+# Logout script
+bindsym $mod+p exec ~/.config/i3/bin/logout
 
 # Lock screen 
 bindsym $mod+shift+x exec i3lock -c 000000 
