@@ -46,6 +46,7 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+set paste
 
 " Colors and Fonts
 syntax enable
