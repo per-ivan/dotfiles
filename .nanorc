@@ -1,0 +1,11 @@
+# enables the minibar feature
+set minibar
+
+# disables the shortcut hints
+#set nohelp
+
+# disable inverse text for the minibar
+set titlecolor normal,normal
+
+# https://ariadne.space/2021/08/13/gnu-nano-is-my-editor-of-choice/
+include /*.nanorc
