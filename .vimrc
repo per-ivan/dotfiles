@@ -47,6 +47,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 set paste
+set relativenumber
 
 " Colors and Fonts
 syntax enable
@@ -63,7 +64,17 @@ set softtabstop=4
 set expandtab
 
 " Plugins
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'Asheq/close-buffers.vim' " Close buffers
+Plug 'https://github.com/ctrlpvim/ctrlp.vim' 
+Plug 'davidhalter/jedi-vim'
+Plug 'preservim/nerdtree'
+Plug 'https://github.com/preservim/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/joom/vim-commentary'
+Plug 'https://github.com/nvie/vim-flake8'
+call plug#end()
 
 " Turn on/off files tree
 map <F2> :NERDTreeToggle<CR>
@@ -101,7 +112,7 @@ nnoremap <A-Right>  :bn<CR>
 nnoremap <A-Left>   :bp<CR>
 
 " Close buffers plugin
-nnoremap <silent> Q :CloseBuffers<CR>
+nnoremap <silent> Q :Bdelete menu<CR>
 
 " Turn off arrow in normal mode 
 noremap <Up> <NOP>
