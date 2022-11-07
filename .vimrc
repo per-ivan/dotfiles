@@ -7,6 +7,7 @@ set autoread
 nmap <leader>w :w!<cr>
 set mouse=a
 set clipboard+=unnamed
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 " Registers
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
@@ -18,6 +19,7 @@ set path+=**
 
 " Display all matching files when we tab complete
 set wildmenu
+set wildmode=list:longest
 
 " VIM user interface
 set so=7
@@ -47,12 +49,12 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 set paste
-set relativenumber
+" set relativenumber
 
 " Colors and Fonts
 syntax enable
 
-colorscheme desert
+colorscheme default
 let g:airline_theme='deus'
 
 set t_Co=256
@@ -74,16 +76,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/joom/vim-commentary'
 Plug 'https://github.com/nvie/vim-flake8'
+Plug 'dyng/ctrlsf.vim'
+Plug 'https://github.com/rodjek/vim-puppet'
 call plug#end()
 
 " Turn on/off files tree
 map <F2> :NERDTreeToggle<CR>
 
+set pastetoggle=<F3>
+
 " Comment selected text
-map <F3> :normal! i#<CR>
+" map <F3> :normal! i#<CR>
 
 " Uncomment selected text
-map <F4> :normal! x<CR>
+" map <F4> :normal! x<CR>
 
 " Open new window vertically
 "nnoremap <F4> :vsp<CR>
@@ -130,3 +136,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 vnoremap <C-c> "+yy
 nnoremap <F9> :g:^#:normal dd<CR>
+
+nmap     <C-F>f <Plug>CtrlSFCwordPath
+vmap     <C-F>f <Plug>CtrlSFVwordPath
