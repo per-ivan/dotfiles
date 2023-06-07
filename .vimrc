@@ -22,6 +22,7 @@ set wildmenu
 set wildmode=list:longest
 
 " VIM user interface
+set cursorline!
 set so=7
 set langmenu=en
 set ruler
@@ -54,8 +55,8 @@ set paste
 " Colors and Fonts
 syntax enable
 
-colorscheme default
-let g:airline_theme='deus'
+colorscheme everforest
+let g:airline_theme='everforest'
 
 set t_Co=256
 set background=dark
@@ -78,6 +79,7 @@ Plug 'https://github.com/joom/vim-commentary'
 Plug 'https://github.com/nvie/vim-flake8'
 Plug 'dyng/ctrlsf.vim'
 Plug 'https://github.com/rodjek/vim-puppet'
+Plug 'ap/vim-buftabline'
 call plug#end()
 
 " Turn on/off files tree
